@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var Display: UILabel!
+    @IBOutlet weak var decimalButton: UIButton!
     
     var userIsInTheMiddleOfTypingNumber = false;
     
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
     @IBAction func clearCalc(sender: UIButton) {
         brain.clearCalc()
         userIsInTheMiddleOfTypingNumber = false
-        displayValue = 0;
+        displayValue = 0
     }
     
     //set the variable feature to the number in the display
@@ -94,8 +95,11 @@ class ViewController: UIViewController {
             Display.text = Display.text! + digit
         }
         else{
+            if digit == decimalButton {
+                Display.text = "0."
+            }
             Display.text = digit
-            userIsInTheMiddleOfTypingNumber = true;
+            userIsInTheMiddleOfTypingNumber = true
         }
     }
 
@@ -120,7 +124,7 @@ class ViewController: UIViewController {
         userIsInTheMiddleOfTypingNumber = false;
         if let result = brain.pushOperand(displayValue)
         {
-            Display.text = result;
+            Display.text = result
         }
         else
         {
