@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     var userIsInTheMiddleOfTypingNumber = false;
     
+    var decimalPlaced = false;
+    
     var brain = CalculatorBrain()
 
     @IBAction func negativeVal(sender: UIButton) {
@@ -119,12 +121,19 @@ class ViewController: UIViewController {
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTypingNumber{
+            if digit == decimalButton {
+                if decimalPlaced {
+                    return
+                }
+                decimalPlaced = true
+            }
             Display.text = Display.text! + digit
         }
         else{
             userIsInTheMiddleOfTypingNumber = true
             if digit == decimalButton {
                 Display.text = "0."
+                decimalPlaced = true
             }
             if Display.text! == "-" {
                 Display.text! = Display.text! + digit
