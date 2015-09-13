@@ -60,6 +60,8 @@ class CalculatorBrain{
         knownOps["÷"] = Op.BinaryOperation("÷", 2, {$1 / $0})
         knownOps["√"] = Op.UnaryOperation("√", sqrt)
         knownOps["±"] = Op.UnaryOperation("-", -)
+        knownOps["cos"] = Op.UnaryOperation("cos", cos)
+        knownOps["sin"] = Op.UnaryOperation("sin", sin)
     }
     
     var program: AnyObject{//guaranteed to be a PropertyList
@@ -132,9 +134,7 @@ class CalculatorBrain{
             case .UnaryOperation(let uOp, _):
                 let unaryOp = buildDesc(remainingOp)
                 var unaryResult = unaryOp.result
-                if op.precedence > unaryOp.precedence {
-                    unaryResult = "(\(unaryResult))"
-                }
+                unaryResult = "(\(unaryResult))"
                 return ("\(uOp) \(unaryResult) ", remainingOp, op.precedence)
             case .BinaryOperation(let bOp, _, _):
                 let rightOp = buildDesc(remainingOp)
@@ -192,13 +192,13 @@ class CalculatorBrain{
                 return (false, "no variable value set", nil, remainingOp)
             case .Operand(let operand):
                 return (true, "value", operand, remainingOp)
-            case .UnaryOperation(_, let uOp):
+            case .UnaryOperation(let symbol, let uOp):
                 let unaryOp = findErrors(remainingOp)
                 if (unaryOp.result)
                 {
-                    if unaryOp.value < 0
+                    if unaryOp.value < 0 && symbol == "√"
                     {
-                        return (false, "square root of negative number invalid", nil, remainingOp)
+                        return (false, "sqrt of negative number", nil, remainingOp)
                     }
                     else
                     {
