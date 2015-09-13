@@ -59,6 +59,7 @@ class CalculatorBrain{
         knownOps["−"] = Op.BinaryOperation("−", 1, {$1 - $0})
         knownOps["÷"] = Op.BinaryOperation("÷", 2, {$1 / $0})
         knownOps["√"] = Op.UnaryOperation("√", sqrt)
+        knownOps["±"] = Op.UnaryOperation("-", -)
     }
     
     var program: AnyObject{//guaranteed to be a PropertyList

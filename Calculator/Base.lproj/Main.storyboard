@@ -257,9 +257,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myC-qP-k3p">
                                 <rect key="frame" x="472" y="75" width="104" height="97"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal">
+                                <state key="normal" title="±">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="negativeVal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gIm-WC-Nbj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -535,11 +538,11 @@
                                 <exclude reference="gf4-F6-sxh"/>
                                 <exclude reference="Er7-mh-uvE"/>
                                 <exclude reference="Wzb-oR-nAt"/>
+                                <exclude reference="ZHh-4d-PFT"/>
+                                <exclude reference="grP-gz-n7e"/>
                                 <exclude reference="Vzd-pC-Jwy"/>
                                 <exclude reference="tMk-9C-lsV"/>
                                 <exclude reference="w1C-jc-iY0"/>
-                                <exclude reference="ZHh-4d-PFT"/>
-                                <exclude reference="grP-gz-n7e"/>
                                 <exclude reference="EiG-YE-Dy3"/>
                                 <exclude reference="Y8g-gn-dLF"/>
                                 <exclude reference="oQc-Po-Mky"/>
@@ -548,14 +551,14 @@
                                 <exclude reference="GJZ-0b-fuu"/>
                                 <exclude reference="UsK-dU-cVf"/>
                                 <exclude reference="gdi-35-mxv"/>
-                                <exclude reference="44l-Pa-yiv"/>
-                                <exclude reference="M0R-g6-pda"/>
-                                <exclude reference="sNA-Im-l4A"/>
                                 <exclude reference="FwH-tB-x8P"/>
                                 <exclude reference="PoS-KJ-SPl"/>
                                 <exclude reference="RLa-lV-Lw6"/>
                                 <exclude reference="lk1-0O-PgD"/>
                                 <exclude reference="oLz-c8-HwE"/>
+                                <exclude reference="44l-Pa-yiv"/>
+                                <exclude reference="M0R-g6-pda"/>
+                                <exclude reference="sNA-Im-l4A"/>
                             </mask>
                         </variation>
                     </view>

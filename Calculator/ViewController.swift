@@ -17,6 +17,32 @@ class ViewController: UIViewController {
     
     var brain = CalculatorBrain()
 
+    @IBAction func negativeVal(sender: UIButton) {
+        if !userIsInTheMiddleOfTypingNumber {
+            if displayValue == 0 {
+                Display.text! = "-"
+                return
+            }
+            //treat negative sign as an action
+            if let operation = sender.currentTitle
+            {
+                if let result = brain.performOperation(operation)
+                {
+                    Display.text = result
+                }
+                else
+                {
+                    displayValue = 0
+                }
+            }
+            
+        }
+        else {
+            Display.text! = "-" + Display.text!
+        }
+        
+    }
+    
     @IBAction func undoAction(sender: AnyObject) {
         //if user is in the middle of typing, backspace
         if userIsInTheMiddleOfTypingNumber
@@ -28,6 +54,7 @@ class ViewController: UIViewController {
             else
             {//if last digit, then just set to 0
                 Display.text = "0"
+                userIsInTheMiddleOfTypingNumber = false
             }
         }
         //if not, then undo the last action
@@ -95,11 +122,16 @@ class ViewController: UIViewController {
             Display.text = Display.text! + digit
         }
         else{
+            userIsInTheMiddleOfTypingNumber = true
             if digit == decimalButton {
                 Display.text = "0."
             }
+            if Display.text! == "-" {
+                Display.text! = Display.text! + digit
+                return
+            }
             Display.text = digit
-            userIsInTheMiddleOfTypingNumber = true
+            
         }
     }
 
