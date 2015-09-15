@@ -156,6 +156,13 @@ class CalculatorBrain{
         }
     }
     
+    func returnDesc() -> String?
+    {
+        let desc = buildDesc(opStack).result
+        println("\(desc)");
+        return desc
+    }
+    
     func evaluate() -> String?
     {
         let (result, remainder) = evaluate(opStack)

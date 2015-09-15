@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0C1BAD1BA7740E00997F75 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C1BAC1BA7740E00997F75 /* DescriptionViewController.swift */; };
 		8CC14ECD1ACDDB8F00CBE824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC14ECC1ACDDB8F00CBE824 /* AppDelegate.swift */; };
 		8CC14ECF1ACDDB8F00CBE824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC14ECE1ACDDB8F00CBE824 /* ViewController.swift */; };
 		8CC14ED21ACDDB8F00CBE824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC14ED01ACDDB8F00CBE824 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C0C1BAC1BA7740E00997F75 /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		8CC14EC71ACDDB8F00CBE824 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC14ECB1ACDDB8F00CBE824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC14ECC1ACDDB8F00CBE824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				8CC14ECE1ACDDB8F00CBE824 /* ViewController.swift */,
 				8CF24BE01AD7859E00979054 /* CalculatorBrain.swift */,
 				8CC14ED01ACDDB8F00CBE824 /* Main.storyboard */,
+				8C0C1BAC1BA7740E00997F75 /* DescriptionViewController.swift */,
 				8CC14ECA1ACDDB8F00CBE824 /* Supporting Files */,
 			);
 			path = Calculator;
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF24BE11AD7859E00979054 /* CalculatorBrain.swift in Sources */,
+				8C0C1BAD1BA7740E00997F75 /* DescriptionViewController.swift in Sources */,
 				8CC14ECF1ACDDB8F00CBE824 /* ViewController.swift in Sources */,
 				8CC14ECD1ACDDB8F00CBE824 /* AppDelegate.swift in Sources */,
 			);

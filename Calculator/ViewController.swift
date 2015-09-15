@@ -172,6 +172,15 @@ class ViewController: UIViewController {
             displayValue = 0
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dvc = segue.destinationViewController as? DescriptionViewController {
+            if let equation = brain.returnDesc() {
+                dvc.desc = equation
+            }
+        }
+    }
+    
     var displayValue: Double{
         get {
             return NSNumberFormatter().numberFromString(Display.text!)!.doubleValue
@@ -180,5 +189,6 @@ class ViewController: UIViewController {
             Display.text = "\(newValue)"
         }
     }
+    
 }
 
