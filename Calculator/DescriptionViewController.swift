@@ -10,14 +10,15 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
     
-    @IBOutlet weak var DescriptionDisplay: UILabel!
-    
-    var desc: String?
-    
-    override func viewDidLoad() {
-        if (desc != nil) {
-            DescriptionDisplay.text! = desc!
+    @IBOutlet weak var DescriptionDisplay: UILabel! {
+        didSet {
+            DescriptionDisplay.text = desc
         }
-        
+    }
+    
+    var desc: String = "" {
+        didSet {
+            DescriptionDisplay?.text = desc
+        }
     }
 }
