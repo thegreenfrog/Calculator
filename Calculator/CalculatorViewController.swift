@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculatorViewController.swift
 //  Calculator
 //
 //  Created by Chris Lu on 4/2/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var Display: UILabel!
     @IBOutlet weak var decimalButton: UIButton!
@@ -49,9 +49,9 @@ class ViewController: UIViewController {
         //if user is in the middle of typing, backspace
         if userIsInTheMiddleOfTypingNumber
         {
-            if (count(Display.text!) > 1)
+            if ((Display.text!).characters.count > 1)
             {
-                Display.text = dropLast(Display.text!)
+                Display.text = String((Display.text!).characters.dropLast())
             }
             else
             {//if last digit, then just set to 0
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTypingNumber{
-            if digit == decimalButton {
+            if sender == decimalButton {
                 if decimalPlaced {
                     return
                 }
@@ -131,7 +131,7 @@ class ViewController: UIViewController {
         }
         else{
             userIsInTheMiddleOfTypingNumber = true
-            if digit == decimalButton {
+            if sender == decimalButton {
                 Display.text = "0."
                 decimalPlaced = true
             }
@@ -174,7 +174,7 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let dvc = segue.destinationViewController as? DescriptionViewController {
+        if let dvc = segue.destinationViewController as? GraphViewController {
             if let equation = brain.returnDesc() {
                 dvc.desc = equation
             }

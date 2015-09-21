@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C0C1BAD1BA7740E00997F75 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C1BAC1BA7740E00997F75 /* DescriptionViewController.swift */; };
+		8C0C1BAD1BA7740E00997F75 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C1BAC1BA7740E00997F75 /* GraphViewController.swift */; };
+		8C815CB91BABA31E00A2783A /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C815CB81BABA31E00A2783A /* AxesDrawer.swift */; settings = {ASSET_TAGS = (); }; };
+		8C815CBB1BABC65400A2783A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C815CBA1BABC65400A2783A /* GraphView.swift */; settings = {ASSET_TAGS = (); }; };
 		8CC14ECD1ACDDB8F00CBE824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC14ECC1ACDDB8F00CBE824 /* AppDelegate.swift */; };
-		8CC14ECF1ACDDB8F00CBE824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC14ECE1ACDDB8F00CBE824 /* ViewController.swift */; };
+		8CC14ECF1ACDDB8F00CBE824 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC14ECE1ACDDB8F00CBE824 /* CalculatorViewController.swift */; };
 		8CC14ED21ACDDB8F00CBE824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC14ED01ACDDB8F00CBE824 /* Main.storyboard */; };
 		8CC14ED41ACDDB8F00CBE824 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC14ED31ACDDB8F00CBE824 /* Images.xcassets */; };
 		8CC14ED71ACDDB9000CBE824 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CC14ED51ACDDB9000CBE824 /* LaunchScreen.xib */; };
@@ -28,11 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C0C1BAC1BA7740E00997F75 /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		8C0C1BAC1BA7740E00997F75 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		8C815CB81BABA31E00A2783A /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		8C815CBA1BABC65400A2783A /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		8CC14EC71ACDDB8F00CBE824 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC14ECB1ACDDB8F00CBE824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC14ECC1ACDDB8F00CBE824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CC14ECE1ACDDB8F00CBE824 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CC14ECE1ACDDB8F00CBE824 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		8CC14ED11ACDDB8F00CBE824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CC14ED31ACDDB8F00CBE824 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8CC14ED61ACDDB9000CBE824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -81,10 +85,12 @@
 		8CC14EC91ACDDB8F00CBE824 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				8CC14ECE1ACDDB8F00CBE824 /* ViewController.swift */,
+				8C815CB81BABA31E00A2783A /* AxesDrawer.swift */,
+				8CC14ECE1ACDDB8F00CBE824 /* CalculatorViewController.swift */,
 				8CF24BE01AD7859E00979054 /* CalculatorBrain.swift */,
 				8CC14ED01ACDDB8F00CBE824 /* Main.storyboard */,
-				8C0C1BAC1BA7740E00997F75 /* DescriptionViewController.swift */,
+				8C0C1BAC1BA7740E00997F75 /* GraphViewController.swift */,
+				8C815CBA1BABC65400A2783A /* GraphView.swift */,
 				8CC14ECA1ACDDB8F00CBE824 /* Supporting Files */,
 			);
 			path = Calculator;
@@ -162,7 +168,9 @@
 		8CC14EBF1ACDDB8F00CBE824 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Bowdoin College";
 				TargetAttributes = {
 					8CC14EC61ACDDB8F00CBE824 = {
@@ -218,10 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C815CB91BABA31E00A2783A /* AxesDrawer.swift in Sources */,
 				8CF24BE11AD7859E00979054 /* CalculatorBrain.swift in Sources */,
-				8C0C1BAD1BA7740E00997F75 /* DescriptionViewController.swift in Sources */,
-				8CC14ECF1ACDDB8F00CBE824 /* ViewController.swift in Sources */,
+				8C0C1BAD1BA7740E00997F75 /* GraphViewController.swift in Sources */,
+				8CC14ECF1ACDDB8F00CBE824 /* CalculatorViewController.swift in Sources */,
 				8CC14ECD1ACDDB8F00CBE824 /* AppDelegate.swift in Sources */,
+				8C815CBB1BABC65400A2783A /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +293,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -348,6 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bowdoin.Lu.Chris.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -358,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bowdoin.Lu.Chris.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -376,6 +389,7 @@
 				);
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bowdoin.Lu.Chris.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
 			};
@@ -391,6 +405,7 @@
 				);
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bowdoin.Lu.Chris.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
 			};

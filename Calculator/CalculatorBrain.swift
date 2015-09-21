@@ -11,7 +11,7 @@ import Foundation
 class CalculatorBrain{
     
     //enum that has types for any kind of element inserted into calculator
-    private enum Op: Printable
+    private enum Op: CustomStringConvertible
     {
         case Operand(Double)
         case Variable(String)
@@ -159,17 +159,17 @@ class CalculatorBrain{
     func returnDesc() -> String?
     {
         let desc = buildDesc(opStack).result
-        println("\(desc)");
+        print("\(desc)");
         return desc
     }
     
     func evaluate() -> String?
     {
-        let (result, remainder) = evaluate(opStack)
+        let (result, _) = evaluate(opStack)
         //build the string
         let equation = buildDesc(opStack)
         description = equation.result
-        println("\(description)")
+        print("\(description)")
         if let anyErr = evaluateAndReportErrors()
         {
             return anyErr
