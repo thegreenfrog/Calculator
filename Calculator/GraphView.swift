@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol GraphViewDataSource: class {
+    func yValue(x: CGFloat) -> CGFloat?
+}
+
 @IBDesignable
 class GraphView: UIView {
     
     var scale: CGFloat = 50.0 { didSet { setNeedsDisplay() } }
-    
     var zoom: CGFloat = 1.0 { didSet { setNeedsDisplay() } }
+    
+    var lineWidth: CGFloat = 1.0 { didSet { setNeedsDisplay() } }
+    var color: UIColor = UIColor.blackColor() { didSet { setNeedsDisplay() } }
     
     var origin: CGPoint {
         get {
@@ -33,6 +39,8 @@ class GraphView: UIView {
     private var originRealtiveToRealCenter: CGPoint = CGPoint() { didSet { setNeedsDisplay() } }
     
     var snapshot: UIView?
+    
+    weak var dataSource: GraphViewDataSource?
     
     func zoom(gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
@@ -88,7 +96,37 @@ class GraphView: UIView {
         }
     }
     
+    func doubleTap(gesture: UITapGestureRecognizer) {
+        if gesture.state == .Ended {
+            origin = gesture.locationInView(self)
+        }
+    }
+    
     override func drawRect(rect: CGRect) {
         AxesDrawer(contentScaleFactor: contentScaleFactor).drawAxesInRect(bounds, origin: origin, pointsPerUnit: scale)
+        
+        //draw the graph 
+        let path = UIBezierPath()
+        path.lineWidth = lineWidth
+        var point = CGPoint()
+        var firstPoint = true
+        for var i = 0; i <= Int(bounds.size.width * contentScaleFactor); i++ {
+            //draw each point given its location
+            point.x = CGFloat(i) / contentScaleFactor
+            if let yVal = dataSource?.yValue((point.x - origin.x)/scale)
+            {
+                point.y = origin.y - yVal * scale
+                if firstPoint {
+                    path.moveToPoint(point)
+                    firstPoint = false
+                    continue
+                }
+                path.addLineToPoint(point)
+            } else {
+                firstPoint = true
+            }
+        }
+        path.stroke()
+        
     }
 }

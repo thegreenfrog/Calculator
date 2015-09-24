@@ -78,6 +78,9 @@ class CalculatorBrain{
                     else if let operand = NSNumberFormatter().numberFromString(opSymbol)?.doubleValue{
                         newOpStack.append(.Operand(operand))
                     }
+                    else {
+                        newOpStack.append(.Variable(opSymbol))
+                    }
                 }
                 opStack = newOpStack
             }
@@ -163,7 +166,7 @@ class CalculatorBrain{
         return desc
     }
     
-    func evaluate() -> String?
+    func evaluate() -> (result: String?, valid: Bool)
     {
         let (result, _) = evaluate(opStack)
         //build the string
@@ -172,11 +175,11 @@ class CalculatorBrain{
         print("\(description)")
         if let anyErr = evaluateAndReportErrors()
         {
-            return anyErr
+            return (anyErr, false)
         }
         else
         {
-            return "\(result!)";
+            return ("\(result!)", true);
         }
     }
     
@@ -267,21 +270,21 @@ class CalculatorBrain{
     }
     
     //push a value to the stack
-    func pushOperand(operand: Double) -> String?
+    func pushOperand(operand: Double) -> (result: String?, valid: Bool)
     {
         opStack.append(Op.Operand(operand))
         return evaluate()
     }
     
     //push variable to stack
-    func pushOperand(operand: String) -> String?
+    func pushOperand(operand: String) -> (result: String?, valid: Bool)
     {
         opStack.append(Op.Variable(operand))
         return evaluate()
     }
     
     //add operator to stack and evaluate expression
-    func performOperation(symbol: String) -> String?
+    func performOperation(symbol: String) -> (result: String?, valid: Bool)
     {
         if let operation = knownOps[symbol]{
             opStack.append(operation)
@@ -328,13 +331,13 @@ class CalculatorBrain{
                 //if the last element is an operator, push back onto stack and return result
                 switch lastVal{
                 case .Variable(_):
-                    return (evaluate(), 0)
+                    return (evaluate().result, 0)
                 case .UnaryOperation(_, _):
                     opStack.append(lastVal)
-                    return (evaluate(), 0)
+                    return (evaluate().result, 0)
                 case .BinaryOperation(_, _, _):
                     opStack.append(lastVal)
-                    return (evaluate(), 0)
+                    return (evaluate().result, 0)
                 case .Operand(let number):
                     return ("\(number)", 1)
                 }

@@ -1,4 +1,4 @@
-//
+ //
 //  CalculatorViewController.swift
 //  Calculator
 //
@@ -28,7 +28,7 @@ class CalculatorViewController: UIViewController {
             //treat negative sign as an action
             if let operation = sender.currentTitle
             {
-                if let result = brain.performOperation(operation)
+                if let result = brain.performOperation(operation).result
                 {
                     Display.text = result
                 }
@@ -97,7 +97,7 @@ class CalculatorViewController: UIViewController {
         let value = displayValue
         brain.setVariable(value)
         //re evaluate to go back to last evaluation before variable set
-        if let result = brain.evaluate()
+        if let result = brain.evaluate().result
         {
             Display.text = result
         }
@@ -108,7 +108,7 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func pushVariable(sender: UIButton) {
-        if let result = brain.pushOperand("M")
+        if let result = brain.pushOperand("M").result
         {
             Display.text = result
         }
@@ -150,7 +150,7 @@ class CalculatorViewController: UIViewController {
         }
         if let operation = sender.currentTitle
         {
-            if let result = brain.performOperation(operation)
+            if let result = brain.performOperation(operation).result
             {
                 Display.text = result
             }
@@ -163,7 +163,7 @@ class CalculatorViewController: UIViewController {
 
     @IBAction func Enter() {
         userIsInTheMiddleOfTypingNumber = false;
-        if let result = brain.pushOperand(displayValue)
+        if let result = brain.pushOperand(displayValue).result
         {
             Display.text = result
         }
@@ -174,9 +174,15 @@ class CalculatorViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let dvc = segue.destinationViewController as? GraphViewController {
+        var destination = segue.destinationViewController as? UIViewController
+        if let intermediate = destination as? UINavigationController {
+            destination = intermediate.visibleViewController
+        }
+        if let dvc = destination as? GraphViewController {
             if let equation = brain.returnDesc() {
                 dvc.desc = equation
+                dvc.program = brain.program
+                dvc.title = brain.returnDesc() == "" ? "Graph" : brain.returnDesc()
             }
         }
     }

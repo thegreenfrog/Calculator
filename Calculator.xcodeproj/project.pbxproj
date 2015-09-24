@@ -16,6 +16,7 @@
 		8CC14ED41ACDDB8F00CBE824 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC14ED31ACDDB8F00CBE824 /* Images.xcassets */; };
 		8CC14ED71ACDDB9000CBE824 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CC14ED51ACDDB9000CBE824 /* LaunchScreen.xib */; };
 		8CC14EE31ACDDB9000CBE824 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC14EE21ACDDB9000CBE824 /* CalculatorTests.swift */; };
+		8CEC03D41BB0A192000485D4 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEC03D31BB0A192000485D4 /* DescriptionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8CF24BE11AD7859E00979054 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF24BE01AD7859E00979054 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		8CC14EDC1ACDDB9000CBE824 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC14EE11ACDDB9000CBE824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC14EE21ACDDB9000CBE824 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		8CEC03D31BB0A192000485D4 /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		8CF24BE01AD7859E00979054 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				8CF24BE01AD7859E00979054 /* CalculatorBrain.swift */,
 				8CC14ED01ACDDB8F00CBE824 /* Main.storyboard */,
 				8C0C1BAC1BA7740E00997F75 /* GraphViewController.swift */,
+				8CEC03D31BB0A192000485D4 /* DescriptionViewController.swift */,
 				8C815CBA1BABC65400A2783A /* GraphView.swift */,
 				8CC14ECA1ACDDB8F00CBE824 /* Supporting Files */,
 			);
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C815CB91BABA31E00A2783A /* AxesDrawer.swift in Sources */,
+				8CEC03D41BB0A192000485D4 /* DescriptionViewController.swift in Sources */,
 				8CF24BE11AD7859E00979054 /* CalculatorBrain.swift in Sources */,
 				8C0C1BAD1BA7740E00997F75 /* GraphViewController.swift in Sources */,
 				8CC14ECF1ACDDB8F00CBE824 /* CalculatorViewController.swift in Sources */,
