@@ -257,7 +257,7 @@ class CalculatorBrain{
     func evaluateAndReportErrors() -> String?
     {
         //mimick evaluate(), but do not pass back description
-        //immediatley return when find error
+        //immediately return when find error
         let errmsg = findErrors(opStack)
         if errmsg.result
         {
